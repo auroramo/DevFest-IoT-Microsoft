@@ -23,6 +23,7 @@ var colors          = require('colors/safe');
 var cors            = require('cors');
 var uuid            = require('node-uuid');
 var SerialPort      = require("serialport").SerialPort;
+var ioClient        = require('socket.io-client');
 
 var dependencies = {
     express         : express,
@@ -39,7 +40,8 @@ var dependencies = {
     mpromise        : mpromise,
     colors          : colors,
     uuid            : uuid,
-    serialport      : SerialPort
+    serialport      : SerialPort,
+    ioClient        : ioClient
 }
 
 console.log(dependencies.colors.green(' DevFest.PI: ') + 'Libs imported');
