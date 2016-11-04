@@ -1,0 +1,47 @@
+{
+  "name": "devfest-iot-microsoft",
+  "title": "Raspberry Pi App",
+  "description": "",
+  "version": "0.0.1",
+  "homepage": "https://github.com/thEpisode/",
+  "author": {
+    "name": "Camilo Rodríguez",
+    "url": "https://ingcamilorodriguez.wordpress.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thEpisode/DevFest-IoT-Microsoft.git"
+  },
+  "keywords": [
+    "devfest",
+    "google",
+    "microsoft",
+    "iot",
+    "bogota",
+    "colombia",
+    "2016"
+  ],
+  "bugs": {
+    "url": "https://github.com/thEpisode/DevFest-IoT-Microsoft/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express"           : "latest",
+    "mongoose"          : "latest",
+    "morgan"            : "latest",
+    "body-parser"       : "latest",
+    "jsonwebtoken"      : "latest",
+    "socket.io"         : "latest",
+    "socket.io-client"  : "latest",
+    "is-online"         : "latest",
+    "ejs"               : "latest",
+    "mpromise"          : "latest",
+    "open"				: "latest",
+    "colors"            :"latest",
+    "cors"              :"latest",
+    "node-uuid"         : "latest"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
