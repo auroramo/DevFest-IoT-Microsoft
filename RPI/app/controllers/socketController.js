@@ -31,7 +31,7 @@ function Socket(dependencies){
     }
 
     var socketImplementation = function(){
-        _devFestServer = ioClient.connect(_cross.GetServerUri());
+        _devFestServer = _ioClient.connect(_cross.GetServerUri());
 
         _devFestServer.on('connect', function(){
             console.log('Connected to Kerberos');
