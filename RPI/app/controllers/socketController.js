@@ -30,7 +30,7 @@ function Socket(dependencies){
     }
 
     var socketImplementation = function(){
-        _devFestServer = ioClient.connect(_cross.GetServerUri());
+        /*_devFestServer = ioClient.connect(_cross.GetServerUri());
 
         _devFestServer.on('connect', function(){
             console.log('Connected to Kerberos');
@@ -46,7 +46,7 @@ function Socket(dependencies){
         
         _devFestServer.on('DevFest.IoT.Server', function(data){
             messageHub(data);
-        });
+        });*/
 
         _humidityPort.on('open', function(){
             _console.log('Humidity Serial Port Opend', 'server-success');
