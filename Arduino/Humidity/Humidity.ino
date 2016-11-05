@@ -60,5 +60,4 @@ void loop() {
   Serial.print(h);
   Serial.print(",")
   Serial.print(t);
-  Serial.println("");
 }
