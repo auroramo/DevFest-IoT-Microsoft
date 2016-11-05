@@ -22,7 +22,7 @@ function FlingerServer(dependencies){
         _cross = require('./crossController')({});
         dependencies.cross = _cross;
         _cross.SetFlingerSecretJWT("FlingerIsCool");
-        _cross.SetMongoConnectionString("mongodb://127.0.0.1:27017/DevFest");
+        _cross.SetMongoConnectionString("mongodb://100.73.254.77:27017/DevFest");
 
         /// Setting up secret for JWT
         _app.set('FlingerSecretJWT', _cross.GetFlingerSecretJWT());
