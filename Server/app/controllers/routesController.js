@@ -32,56 +32,6 @@ function Routes(dependencies) {
 
     var createAPI = function () {
 
-        /// Authenticate
-        /// -------------------------
-        //  (POST http://localhost:3000/api/User/GetByCredentials)
-        _apiRoutes.post('/User/GetByCredentials', function (req, res) {
-            _database.User().GetUserByCredentials(req.body, function (result) {
-                res.json({ message: 'GetUserByCredentials', result: result });
-            })
-        });
-
-        // (POST http://localhost:3000/api/User/Create)
-        _apiRoutes.post('/User/Create', function (req, res) {
-            _database.User().CreateUser(req.body, function (result) {
-                res.json({ message: 'CreateUser', result: result });
-            })
-        });
-
-        /// Middleware
-        /// -------------------------
-        //  To verify a token
-        _apiRoutes.use(function (req, res, next) {
-            // check header or url parameters or post parameters for token
-            var token = req.body.token || req.query.token || req.headers['x-access-token'];
-
-            // decode token
-            if (token) {
-                // verifies secret and checks exp
-                _jwt.verify(token, _app.get('FlingerSecretJWT'), function (err, decoded) {
-                    if (err) {
-                        return res.json({ success: false, message: 'Failed to authenticate token.' });
-                    }
-                    else {
-                        // if everything is good, save to request for use in other routes
-                        req.decoded = decoded;
-                        next();
-                    }
-                });
-
-            }
-            else {
-
-                // if there is no token
-                // return an error
-                return res.status(403).send({
-                    success: false,
-                    message: 'No token provided.'
-                });
-
-            }
-        });
-
         /// Welcome
         /// -------------------------
         // route to show message (GET http://localhost:3000/api/Welcome)
