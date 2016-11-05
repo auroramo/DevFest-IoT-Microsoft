@@ -35,15 +35,15 @@ function Socket(dependencies){
         _devFestServer = _ioClient.connect(_cross.GetServerUri());
 
         _devFestServer.on('connect', function(){
-            console.log('Connected to Kerberos');
+            _console.log('Connected to Server', 'socket-message');
         });
         
         _devFestServer.on('disconnect', function(){
-            console.log('Kerberos is offline');
+            _console.log('Disconnected from server', 'socket-message');
         });
         
         _devFestServer.on('Welcome', function(data){
-            myKerberosId = data.SocketId;
+            _console.log('My client Id: ' + data.SocketId, 'socket-message');
         });
         
         _devFestServer.on('DevFest.IoT.Server', function(data){
@@ -53,8 +53,8 @@ function Socket(dependencies){
         _humidityPort.on('open', function(){
             _console.log('Humidity Serial Port Opend', 'server-success');
             _humidityPort.on('data', function(data){
-                //_console.log('Humidity:' + data, 'socket-message');
-                //_devFestServer.emit('DevFest.IoT.PI', {Command: 'HumidityPushData', Values:[{SensorData: data[0]}]} )
+                _console.log('Humidity:' + data, 'socket-message');
+                _devFestServer.emit('DevFest.IoT.PI', {Command: 'HumidityPushData', Values:{Humidity: data.split(',')[0], Temperature: data.split(',')[1]}} )
                 
             });
         });
@@ -62,8 +62,8 @@ function Socket(dependencies){
         _photocelPort.on('open', function(){
             _console.log('Photocell Serial Port Opend', 'server-success');
             _photocelPort.on('data', function(data){
-                //_console.log('Light:' + data, 'socket-message');
-                //_devFestServer.emit('DevFest.IoT.PI', {Command: 'PhotocellPushData', Values:[{SensorData: data[0]}]} )
+                _console.log('Light:' + data, 'socket-message');
+                _devFestServer.emit('DevFest.IoT.PI', {Command: 'PhotocellPushData', Values:{Brightness: data}} )
                 
             });
         });

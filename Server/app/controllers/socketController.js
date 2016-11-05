@@ -24,22 +24,17 @@ function Socket(dependencies){
             /// Request all insights queue
             socket.emit('Coplest.Flinger.ServerEvent', {Command : 'InsightsQueue'});
 
-            socket.on('Coplest.Flinger.PushInsight', function(data){
+            socket.on('DevFest.IoT.PI', function(data){
                 if (data.Command != undefined){
                     switch(data.Command){
-                        case 'Click':
-                            _database.Click().CreateClick(data.Values, function(){
+                        case 'PhotocellPushData':
+                            _database.Photocell().photocell(data.Values, function(){
                                 //console.log('Click Saved');
                             })
                             break;
-                        case 'Movement':
-                            _database.Movement().CreateMovement(data.Values, function(){
+                        case 'HumidityPushData':
+                            _database.Humidity().createHumidity(data.Values, function(){
                                 //console.log('Movement Saved');
-                            })
-                            break;
-                        case 'Scroll':
-                            _database.Scroll().CreateScroll(data.Values, function(){
-                                //console.log('Scroll Saved');
                             })
                             break;
                     }

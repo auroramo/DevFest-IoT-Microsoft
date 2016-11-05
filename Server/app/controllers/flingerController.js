@@ -28,8 +28,8 @@ function FlingerServer(dependencies){
         _app.set('FlingerSecretJWT', _cross.GetFlingerSecretJWT());
 
         /// Database declaration
-		/*_databaseController = require('./databaseController')(dependencies);
-        dependencies.database = _databaseController;*/
+		_databaseController = require('./databaseController')(dependencies);
+        dependencies.database = _databaseController;
 
         /// Frontend declaration
         _frontendController = require('./frontendController')(dependencies);
@@ -46,8 +46,8 @@ function FlingerServer(dependencies){
     }
 
     var initializeControllers = function(){
-        //_databaseController.Initialize();
-        //_routesController.Initialize();
+        _databaseController.Initialize();
+        _routesController.Initialize();
         _frontendController.Initialize();
         _socketController.Initialize();
 

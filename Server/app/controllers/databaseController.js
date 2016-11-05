@@ -54,14 +54,19 @@ function Database(dependencies){
         return _dbConnected;
     }
 
-    var getClickController = function(){
-        return _click;
+    var getHumidityController = function(){
+        return _humidity;
+    }
+
+    var getPhotocellController = function(){
+        return _photocell;
     }
 
     return {
         Initialize  : constructor,
         IsConnected : isConnected,
-        Click       : getClickController
+        Humidity       : getHumidityController,
+        Photocell : getPhotocellController
     }
 }
 
