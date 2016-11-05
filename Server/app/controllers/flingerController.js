@@ -46,8 +46,8 @@ function FlingerServer(dependencies){
     }
 
     var initializeControllers = function(){
-        _databaseController.Initialize();
-        _routesController.Initialize();
+        //_databaseController.Initialize();
+        //_routesController.Initialize();
         _frontendController.Initialize();
         _socketController.Initialize();
 
