@@ -22,7 +22,7 @@ var open            = require('open');
 var colors          = require('colors/safe');
 var cors            = require('cors');
 var uuid            = require('node-uuid');
-var SerialPort      = require("serialport").SerialPort;
+var SerialPort      = require("serialport");
 var ioClient        = require('socket.io-client');
 
 var dependencies = {
