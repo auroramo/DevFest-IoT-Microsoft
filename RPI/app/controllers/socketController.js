@@ -54,7 +54,7 @@ function Socket(dependencies){
             _console.log('Humidity Serial Port Opend', 'server-success');
             _humidityPort.on('data', function(data){
                 _console.log('Humidity:' + data, 'socket-message');
-                _devFestServer.emit('DevFest.IoT.PI', {Command: 'HumidityPushData', Values:{Humidity: data.split(',')[0], Temperature: data.split(',')[1]}} )
+                _devFestServer.emit('DevFest.IoT.PI', {Command: 'HumidityPushData', Values:{Humidity: data.toString().split(',')[0], Temperature: data.toString().split(',')[1]}} )
                 
             });
         });

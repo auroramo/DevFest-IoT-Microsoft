@@ -28,7 +28,7 @@ function Socket(dependencies){
                 if (data.Command != undefined){
                     switch(data.Command){
                         case 'PhotocellPushData':
-                            _database.Photocell().photocell(data.Values, function(){
+                            _database.Photocell().createPhotocell(data.Values, function(){
                                 //console.log('Click Saved');
                             })
                             break;
