@@ -16,11 +16,10 @@ void setup(void) {
 void loop(void) {
   photocellReading = analogRead(photocellPin);  
  
-  Serial.print("Analog reading = ");
   Serial.print(photocellReading);     // the raw analog reading
  
   // We'll have a few threshholds, qualitatively determined
-  if (photocellReading < 10) {
+  /*if (photocellReading < 10) {
     Serial.println(" - Dark");
   } else if (photocellReading < 200) {
     Serial.println(" - Dim");
@@ -30,6 +29,6 @@ void loop(void) {
     Serial.println(" - Bright");
   } else {
     Serial.println(" - Very bright");
-  }
+  }*/
   delay(1000);
 }
