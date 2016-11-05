@@ -35,7 +35,7 @@ function FlingerServer(dependencies){
         _frontendController = require('./frontendController')(dependencies);
 
         /// Routes declaration
- 		//_routesController = require('./routesController')(dependencies);
+ 		_routesController = require('./routesController')(dependencies);
 
          /// Socket declaration
         _socketController = require('./socketController')(dependencies);
