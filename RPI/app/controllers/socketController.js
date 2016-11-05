@@ -53,16 +53,16 @@ function Socket(dependencies){
         _humidityPort.on('open', function(){
             _console.log('Humidity Serial Port Opend', 'server-success');
             _humidityPort.on('data', function(data){
-                _console.log(data[0], 'socket-message');
+                _console.log('Humidity:' + data[0], 'socket-message');
                 //_devFestServer.emit('DevFest.IoT.PI', {Command: 'HumidityPushData', Values:[{SensorData: data[0]}]} )
                 
             });
         });
 
         _photocelPort.on('open', function(){
-            _console.log('Humidity Serial Port Opend', 'server-success');
+            _console.log('Photocell Serial Port Opend', 'server-success');
             _photocelPort.on('data', function(data){
-                _console.log(data[0], 'socket-message');
+                _console.log('Light' + data[0], 'socket-message');
                 //_devFestServer.emit('DevFest.IoT.PI', {Command: 'PhotocellPushData', Values:[{SensorData: data[0]}]} )
                 
             });
