@@ -25,8 +25,8 @@ function Socket(dependencies){
     }
 
     var setSerialPorts = function(){
-        _humidityPort = new _serialport("/dev/tty.usbmodem1421");
-        _photocelPort = new _serialPort("/dev/tty.usbmodem1421");
+        _humidityPort = new _serialport("/dev/ttyACM0");
+        _photocelPort = new _serialPort("/dev/ttyACM1");
     }
 
     var socketImplementation = function(){
@@ -52,7 +52,7 @@ function Socket(dependencies){
             _console.log('Humidity Serial Port Opend', 'server-success');
             _humidityPort.on('data', function(data){
                 _console.log(data[0], 'socket-message');
-                _devFestServer.emit('DevFest.IoT.PI', {Command: 'HumidityPushData', Values:[{SensorData: data[0]}]} )
+                //_devFestServer.emit('DevFest.IoT.PI', {Command: 'HumidityPushData', Values:[{SensorData: data[0]}]} )
                 
             });
         });
@@ -61,7 +61,7 @@ function Socket(dependencies){
             _console.log('Humidity Serial Port Opend', 'server-success');
             _photocelPort.on('data', function(data){
                 _console.log(data[0], 'socket-message');
-                _devFestServer.emit('DevFest.IoT.PI', {Command: 'PhotocellPushData', Values:[{SensorData: data[0]}]} )
+                //_devFestServer.emit('DevFest.IoT.PI', {Command: 'PhotocellPushData', Values:[{SensorData: data[0]}]} )
                 
             });
         });
