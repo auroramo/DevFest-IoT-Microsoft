@@ -26,13 +26,12 @@ function Socket(dependencies){
     }
 
     var setSerialPorts = function(){
-        console.log(_serialport)
         _humidityPort = new _serialport.SerialPort("/dev/ttyACM0");
         _photocelPort = new _serialport.SerialPort("/dev/ttyACM1");
     }
 
     var socketImplementation = function(){
-        /*_devFestServer = ioClient.connect(_cross.GetServerUri());
+        _devFestServer = ioClient.connect(_cross.GetServerUri());
 
         _devFestServer.on('connect', function(){
             console.log('Connected to Kerberos');
@@ -48,7 +47,7 @@ function Socket(dependencies){
         
         _devFestServer.on('DevFest.IoT.Server', function(data){
             messageHub(data);
-        });*/
+        });
 
         _humidityPort.on('open', function(){
             _console.log('Humidity Serial Port Opend', 'server-success');

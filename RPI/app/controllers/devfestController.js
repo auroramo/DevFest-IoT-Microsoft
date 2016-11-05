@@ -20,7 +20,7 @@ function DevFestPI(dependencies){
 
         /// Cross declaration
         _cross = require('./crossController')({});
-        _cross.SetServerUri("http://clapp.cloudapp.net:3000/");
+        _cross.SetServerUri("http://104.208.167.177:3000/");
         dependencies.cross = _cross;
 
          /// Socket declaration
