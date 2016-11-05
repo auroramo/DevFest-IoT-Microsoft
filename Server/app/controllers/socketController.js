@@ -28,12 +28,12 @@ function Socket(dependencies){
                 if (data.Command != undefined){
                     switch(data.Command){
                         case 'PhotocellPushData':
-                            _database.Photocell().createPhotocell(data.Values, function(){
+                            _database.Photocell().CreatePhotocell(data.Values, function(){
                                 //console.log('Click Saved');
                             })
                             break;
                         case 'HumidityPushData':
-                            _database.Humidity().createHumidity(data.Values, function(){
+                            _database.Humidity().CreateHumidity(data.Values, function(){
                                 //console.log('Movement Saved');
                             })
                             break;
