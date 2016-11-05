@@ -26,6 +26,7 @@ function Socket(dependencies){
     }
 
     var setSerialPorts = function(){
+        console.log(_serialport)
         _humidityPort = new _serialport("/dev/ttyACM0");
         _photocelPort = new _serialPort("/dev/ttyACM1");
     }
