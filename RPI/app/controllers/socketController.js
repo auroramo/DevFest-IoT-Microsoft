@@ -20,6 +20,7 @@ function Socket(dependencies){
         _ioClient   = dependencies.ioClient;
         _cross      = dependencies.cross
 
+        setSerialPorts();
         socketImplementation();
         _console.log('Socket module initialized', 'server-success');
     }
