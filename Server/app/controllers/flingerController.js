@@ -28,14 +28,14 @@ function FlingerServer(dependencies){
         _app.set('FlingerSecretJWT', _cross.GetFlingerSecretJWT());
 
         /// Database declaration
-		_databaseController = require('./databaseController')(dependencies);
-        dependencies.database = _databaseController;
+		/*_databaseController = require('./databaseController')(dependencies);
+        dependencies.database = _databaseController;*/
 
         /// Frontend declaration
         _frontendController = require('./frontendController')(dependencies);
 
         /// Routes declaration
- 		_routesController = require('./routesController')(dependencies);
+ 		//_routesController = require('./routesController')(dependencies);
 
          /// Socket declaration
         _socketController = require('./socketController')(dependencies);
