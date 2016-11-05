@@ -43,15 +43,15 @@ function Routes(dependencies) {
         /// -------------------------
         //  (GET http://localhost:3000/api/Humidity/Id[ID])
         _apiRoutes.get('/Humidity/Id/:Id', function (req, res) {
-            _database.Click().GetClickById(req.params.Id, function (result) {
-                res.json({ message: 'GetClickById', result: result });
+            _database.Humidity().GetHumidityById(req.params.Id, function (result) {
+                res.json({ message: 'GetHumidityById', result: result });
             })
         });
 
         //  (GET http://localhost:3000/api/Humidity)
         _apiRoutes.get('/Humidity/All', function (req, res) {
-            _database.Click().GetAllClick(null, function (result) {
-                res.json({ message: 'GetAllClick', result: result });
+            _database.Humidity().GetAllHumidity(null, function (result) {
+                res.json({ message: 'GetAllHumidity', result: result });
             })
         });
 
@@ -59,15 +59,15 @@ function Routes(dependencies) {
         /// -------------------------
         //  (GET http://localhost:3000/api/Photocell/Id[ID])
         _apiRoutes.get('/Photocell/Id/:Id', function (req, res) {
-            _database.Click().GetClickById(req.params.Id, function (result) {
-                res.json({ message: 'GetClickById', result: result });
+            _database.Photocell().GetPhotocellById(req.params.Id, function (result) {
+                res.json({ message: 'GetPhotocellById', result: result });
             })
         });
 
         //  (GET http://localhost:3000/api/Photocell)
         _apiRoutes.get('/Photocell/All', function (req, res) {
-            _database.Click().GetAllClick(null, function (result) {
-                res.json({ message: 'GetAllClick', result: result });
+            _database.Photocell().GetAllPhotocell(null, function (result) {
+                res.json({ message: 'GetAllPhotocell', result: result });
             })
         });
 
