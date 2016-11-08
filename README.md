@@ -18,8 +18,8 @@ Ok, assuming you have MongoDB server, run with following code:
 
 Compile Arduino Sketch. In Demo be used Arduino Leonardo and using next tutorials:
 
-    - Humidity Sensor: https://learn.adafruit.com/dht/overview
-    - Photocell: https://learn.adafruit.com/photocells/using-a-photocell
+- Humidity Sensor: https://learn.adafruit.com/dht/overview
+- Photocell: https://learn.adafruit.com/photocells/using-a-photocell
 
 If you prefer, could be use Arduino IDE on Windows and connect with Raspberry Pi
 
