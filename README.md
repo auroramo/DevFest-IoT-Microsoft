@@ -8,7 +8,7 @@ Follow next steps:
 
 ### Server/ (Backend server)
 
-Before run this application please check if you have MongoDB installed because this code check mongodb://localhost:27017 path, if you prefer can use external database but **configure correctly** your mongo server 
+Before run this application please check if you have MongoDB installed because this code check *mongodb://localhost:27017* path, if you prefer can use external database but **configure correctly** your mongo server 
 
 Ok, assuming you have MongoDB server, run with following code:
 
